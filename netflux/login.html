@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Netflux</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="auth">
+  <header class="topbar">
+    <a href="./index.html" class="brand">NETFLUX</a>
+  </header>
+
+  <main class="auth-container">
+    <form id="loginForm" class="card" novalidate>
+      <h2>Sign In</h2>
+      <label>Email
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </label>
+      <label>Password
+        <input type="password" name="password" required minlength="4" placeholder="••••••" />
+      </label>
+      <button class="btn btn-primary" type="submit">Sign In</button>
+      <p class="muted">New to Netflux? <a href="./signup.html">Sign up now</a>.</p>
+      <div id="loginError" class="form-error" role="alert" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Netflux</span>
+    </div>
+  </footer>
+
+  <script src="./js/utils.js" defer></script>
+  <script type="module" src="./js/auth.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

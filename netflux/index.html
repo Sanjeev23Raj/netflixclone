@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflux</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="preload" href="./css/styles.css" as="style" />
+  <link rel="icon" href="./assets/images/favicon.png" />
+  <meta name="description" content="Netflux - A lightweight Netflix-style demo app" />
+</head>
+<body class="landing">
+  <div id="intro" class="intro-overlay" aria-hidden="true">
+    <div class="intro-logo" aria-label="Netflux intro">NETFLUX</div>
+    <div class="intro-glow"></div>
+  </div>
+
+  <header class="landing-header">
+    <div class="brand">NETFLUX</div>
+    <nav>
+      <a href="./login.html" class="btn btn-outline">Sign In</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Unlimited movies and shows, all in one place.</h1>
+      <p>Watch anywhere. Profiles for everyone. Cancel anytime.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="./signup.html">Get Started</a>
+        <a class="btn btn-dark" href="./login.html">Sign In</a>
+      </div>
+    </div>
+    <div class="hero-art"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Questions? Email demo@example.com</span>
+      <span>© <span id="year"></span> Netflux</span>
+    </div>
+  </footer>
+
+  <script src="./js/utils.js" defer></script>
+  <script src="./js/intro.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

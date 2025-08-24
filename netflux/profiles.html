@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who's watching? - Netflux</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="profiles">
+  <header class="topbar">
+    <a href="./index.html" class="brand">NETFLUX</a>
+    <nav>
+      <a href="./settings.html" class="btn btn-outline small">Settings</a>
+      <button id="signOutBtn" class="btn btn-outline small">Sign Out</button>
+    </nav>
+  </header>
+
+  <main class="profiles-container">
+    <h1>Who's watching?</h1>
+    <ul id="profilesList" class="profile-grid"></ul>
+    <button id="addProfileBtn" class="btn btn-dark">Add Profile</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Netflux</span>
+    </div>
+  </footer>
+
+  <dialog id="profileDialog" class="dialog">
+    <form method="dialog" id="profileForm" class="card">
+      <h3>Create Profile</h3>
+      <label>Name
+        <input type="text" name="name" required maxlength="20" />
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="isKids" /> Kids profile
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn btn-outline">Cancel</button>
+        <button value="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="./js/utils.js" defer></script>
+  <script type="module" src="./js/profiles.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
