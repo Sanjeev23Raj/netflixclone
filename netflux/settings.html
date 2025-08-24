@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Settings - Netflux</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="settings">
+  <header class="topbar">
+    <a href="./app.html" class="brand">NETFLUX</a>
+  </header>
+  <main class="settings-container">
+    <section class="card">
+      <h2>Profile Settings</h2>
+      <form id="settingsForm">
+        <label>Name
+          <input type="text" name="name" required maxlength="20" />
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="isKids" /> Kids profile
+        </label>
+        <div class="avatar-row">
+          <img id="currentAvatar" class="avatar large" alt="Avatar" />
+          <button id="randomizeAvatar" class="btn btn-dark" type="button">Randomize Avatar</button>
+        </div>
+        <button class="btn btn-primary" type="submit">Save Changes</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Netflux</span>
+    </div>
+  </footer>
+  <script src="./js/utils.js" defer></script>
+  <script type="module" src="./js/settings.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

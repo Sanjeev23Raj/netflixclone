@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse - Netflux</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="app">
+  <div id="intro" class="intro-overlay" aria-hidden="true" hidden>
+    <div class="intro-logo" aria-label="Netflux intro">NETFLUX</div>
+    <div class="intro-glow"></div>
+  </div>
+  <header class="app-header">
+    <a href="./app.html" class="brand">NETFLUX</a>
+    <nav class="nav-left">
+      <a href="#" class="nav-link active">Home</a>
+      <a href="#" class="nav-link">Series</a>
+      <a href="#" class="nav-link">Films</a>
+      <a href="#" class="nav-link">My List</a>
+    </nav>
+    <div class="nav-right">
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search" autocomplete="off" />
+      </div>
+      <a id="kidsBadge" class="kids" title="Kids" href="#">KIDS</a>
+      <div class="profile-menu">
+        <img id="avatarImg" class="avatar" alt="Profile" />
+        <div class="menu">
+          <a href="/workspace/netflux/profiles.html">Switch Profiles</a>
+          <a href="/workspace/netflux/settings.html">Account</a>
+          <a id="signOutLink" href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="content">
+    <section id="featured" class="featured">
+      <div class="featured-backdrop"></div>
+      <div class="featured-content">
+        <h2 id="featuredTitle"></h2>
+        <p id="featuredDesc"></p>
+        <div class="actions">
+          <button id="playFeatured" class="btn btn-primary">Play</button>
+          <button id="addFeatured" class="btn btn-dark">My List</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="row" data-row="continue">
+      <h3>Continue Watching</h3>
+      <div class="row-scroller" id="row-continue"></div>
+    </section>
+
+    <section class="row" data-row="trending">
+      <h3>Trending Now</h3>
+      <div class="row-scroller" id="row-trending"></div>
+    </section>
+
+    <section class="row" data-row="popular">
+      <h3>Popular on Netflux</h3>
+      <div class="row-scroller" id="row-popular"></div>
+    </section>
+
+    <section class="row" data-row="recommended">
+      <h3>Because you watched</h3>
+      <div class="row-scroller" id="row-recommended"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Netflux</span>
+    </div>
+  </footer>
+
+  <dialog id="detailDialog" class="dialog detail">
+    <div class="detail-body">
+      <button class="close" id="closeDetail" aria-label="Close">×</button>
+      <div class="detail-left">
+        <video id="detailVideo" controls playsinline preload="metadata" poster="">
+          <source id="detailSource" src="" type="video/mp4" />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      </div>
+      <div class="detail-right">
+        <h3 id="detailTitle"></h3>
+        <p id="detailMeta" class="muted"></p>
+        <p id="detailDesc"></p>
+        <div class="detail-actions">
+          <button id="detailPlay" class="btn btn-primary">Play</button>
+          <button id="detailAdd" class="btn btn-dark">Add to My List</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./js/utils.js" defer></script>
+  <script src="./js/intro.js" defer></script>
+  <script type="module" src="./js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
